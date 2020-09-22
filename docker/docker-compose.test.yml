@@ -1,0 +1,14 @@
+version: '3'
+services:
+  api:
+    image: roles-express-test
+    build:
+      context: ../
+      dockerfile: docker/test.dockerfile
+    networks:
+      - backend
+    ports:
+      - "9999:9999"
+networks:
+  backend:
+    driver: bridge

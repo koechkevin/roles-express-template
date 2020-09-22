@@ -1,0 +1,14 @@
+version: '3'
+services:
+  api:
+    image: roles-express
+    build:
+      context: ../
+      dockerfile: docker/prod.dockerfile
+    networks:
+      - backend
+    ports:
+      - "9999:9999"
+networks:
+  backend:
+    driver: bridge
